@@ -1,69 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
-    <link rel="stylesheet" type="text/css" href="./index.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Card</title>
+  <link rel="stylesheet" type="text/css" href="./index.css" />
 </head>
+
 <body>
-    <div class="card">
-  <div class="left-container">
-    <img data-testid="profilePicture" src="./ABDUL-P.png" alt="Profile Image">
-    <h2 data-testid="fullName" class="gradienttext">Abdullateef Dauda</h2>
-    <h4 data-testid="jobTitle" >Frontend Developer</h4>
+  <article class="card" data-testid="test-profile-card">
+    <div class="left-container">
+      <figure>
+        <img data-testid="test-user-avatar" src="./ABDUL-P.png" alt="Profile Image" />
+      </figure>
+      
+      <h2 data-testid="test-user-name" class="gradienttext">
+        Abdullateef Dauda
+      </h2>
+      <h4 data-testid="jobTitle">Frontend Developer</h4>
 
-     <!-- Social Media lInk -->
-  <div class="main-section">
-    <button>
-      <a data-testid="socialLinks" id="twitter" href="https://twitter.com/Orbittech1010" target="_blank">Twitter Link</a>
-    </button>
-    <button><a data-testid="socialLinks" id="Linkdln" href="https://www.linkdln.com/abdullateef-dauda"> Linkdln Link</a></button>
-    <button>
-      <a data-testid="socialLinks" id="github" href="http://www.github.com/abdul-o" target="_blank">Github Link</a>
-    </button>
-  </div>
-  </div>
+      <!-- Social Media lInk -->
+      <ul data-testid="test-user-social-links">
 
- 
+        <li class="social">
+          <button>
+            <a data-testid="test-user-social-twitter" id="twitter" href="https://twitter.com/Orbittech1010" target="_blank" rel="noopener noreferrer">Twitter
+              Link</a>
+          </button>
+        </li>
+        <li class="social">
+            <button><a data-testid="test-user-social-linkdln" id="Linkdln" href="https://www.linkdln.com/abdullateef-dauda" target="_blank" rel="noopener noreferrer"> Linkdln Link</a></button>
+    
+      </ul>
+    </div>
 
+    <!-- Right Container -->
 
-  <!-- Right Container -->
+    <div class="right-container">
+      <h3 class="gradienttext">Profile Details</h3>
+      <p data-testid="test-user-bio" class="bio">
+        I'm a dedicated and results-oriented software web developer with
+        passion for creating efficient, scalable, and innovative solutions.
+      </p>
 
-  <div class="right-container">
-    <h3 class="gradienttext">Profile Details</h3>
-    <p data-testid="shortBio" class="bio"> I'm a dedicated and results-oriented software web developer with passion for
-         creating efficient, scalable, and innovative solutions. </p>
-         <div class="bottom-right-cont">
-      <div class="row">
-        <span data-testid="currentLocation" class="location">Current Location :</span>
-        <span data-testid="currentLocation">Lagos Nigeria</span>
-      </div>
-
-      <div class="row">
-        <span class="email">Email :</span>
-        <span data-testid="emailAddress">abdullateefdauda01@gmail.com</span>
+      <section class="hobbies" data-testid="test-user-hobbies">
+        <h5 class="gradienttext">My Hobbies</h5>
+        <ul>
+          <li>Traveling</li>
+          <li>Productive discussion</li>
+          <li>Problem solving</li>
+        </ul>
+      </section>
+      <section class="dislikes" data-testid="test-user-dislikes">
+        <h5 class="gradienttext">My dislikes</h5>
+        <ul>
+          <li>swimming</li>
+          <li>Public discussion</li>
+          <li>Singing</li>
+        </ul>
+      </section>
+      <div class="bottom-right-cont">
+        <div class="row">
+          <span class="C-time">Current Time :</span>
+          <span data-testid="test-user-time" id="currentUTCTime"></span>
         </div>
-      <div class="row">
-        <span class="C-time">Current Time :</span>
-        <span data-testid="currentTimeUTC" id="currentUTCTime"></span>
       </div>
-</div>
-
-  </div>
-</div>
-
+    </div>
+  </article>
 </body>
 
-<script>
-    function updateTime() {
- let currentTime = new Date();
- let currentTimeMillis = currentTime.getTime();
- let currentUTCTime = currentTime.toUTCString();
+<script src="./index.js"></script>
 
- document.querySelector('#currentUTCTime').textContent = currentUTCTime;
-};
-setInterval(updateTime, 1000); // Run updateTime() every second
-</script>
 </html>
